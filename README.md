@@ -17,7 +17,7 @@ optimizer = AutoMuon(model)
 ## Installation
  
 ```bash
-pip install https://github.com/SkyeGunasekaran/automuon.git
+pip install git+https://github.com/SkyeGunasekaran/automuon.git
 ```
  
 Requires Python ≥ 3.10 and PyTorch ≥ 2.0.
