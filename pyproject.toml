@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools>=64.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "automuon"
+version = "0.1.0"
+description = "A one-line drop-in replacement for AdamW using the Muon optimizer for 2D weights."
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.10"
+authors = [
+    { name = "Skye Gunasekaran" },
+]
+keywords = ["deep learning", "optimizer", "muon", "adamw", "pytorch", "training"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "torch>=2.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/skyegunasekaran/automuon"
+Repository = "https://github.com/skyegunasekaran/automuon"
+Issues = "https://github.com/skyegunasekaran/automuon/issues"
+Changelog = "https://github.com/skyegunasekaran/automuon/blob/main/CHANGELOG.md"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["automuon*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+
+[tool.coverage.run]
+source = ["automuon"]
+omit = ["tests/*"]
